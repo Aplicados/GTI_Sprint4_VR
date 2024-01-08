@@ -23,6 +23,7 @@ public class CajaCablesPuzzleManager : MonoBehaviour
             //Puzzle completed
             Debug.Log("All cables connected!");
             OnPuzzleCompleted?.Invoke();
+            
         }
     }
     public void AbrirCaja(bool abrir)

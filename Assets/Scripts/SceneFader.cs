@@ -7,6 +7,7 @@ public class SceneFader : MonoBehaviour
 {
     public Image fadeImage;
     public float fadeSpeed = 1f;
+    
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class SceneFader : MonoBehaviour
             alpha += fadeSpeed * Time.deltaTime;
             fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
+
         }
         SceneManager.LoadScene(sceneName);
     }
