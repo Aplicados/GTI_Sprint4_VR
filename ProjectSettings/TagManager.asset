@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pilar
+  - Serpiente
+  - Cuadrado
+  - MapaPie
+  - Hierva
+  - draggable
   layers:
   - Default
   - TransparentFX
