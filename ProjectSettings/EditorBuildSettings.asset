@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenaVideo.unity
     guid: 77b573a17e14ff04483dd689a01a337c
+  - enabled: 1
+    path: Assets/Scenes/LunarLandscape3D_PostVideo.unity
+    guid: 53075f054d7ecd648b19b77cebf6fdc5
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 23fed8e51132b554bb5c7afa78eac627, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 99b9ebb8043f5e64eab2f9d6fff41a6d, type: 2}

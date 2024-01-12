@@ -10,6 +10,7 @@ TagManager:
   - MapaPie
   - Hierva
   - draggable
+  - Llave
   layers:
   - Default
   - TransparentFX
