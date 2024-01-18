@@ -2,49 +2,67 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SecondGameManager : MonoBehaviour
 {
-    public Drop[] pillars;  // Asegúrate de asignar los pilares en el editor de Unity
+    public Drop[] pillars;
     private int correctPillars = 0;
+    private int incorrectPillars = 0;
     public GameObject prefabToSpawn;
+    public TextMeshProUGUI texto;
+
     private bool flag = true;
 
     void Update()
     {
         CheckPillars();
-        // No necesitas inicializar los pilares aquí, ya que los asignarás manualmente en el editor
     }
 
     public void CheckPillars()
     {
         correctPillars = 0;
+        incorrectPillars = 0;
 
         foreach (Drop pilar in pillars)
         {
-            // Compara el nombre del objeto Drag encima del pilar con el nombre esperado.
-            if (pilar.currentDragObject != null && pilar.expectedTag == pilar.currentDragObject.gameObject.name)
+            if (pilar.currentDragObject != null)
             {
-                correctPillars++;
+                if (pilar.expectedTag == pilar.currentDragObject.gameObject.name)
+                {
+                    correctPillars++;
+                }
+                else
+                {
+                    incorrectPillars++;
+                }
             }
         }
 
-        // Si todos los pilares tienen el objeto correcto, muestra un mensaje
+        texto.text = $"{correctPillars}/4";
+
         if (correctPillars == pillars.Length)
         {
             Debug.Log("¡Todos los pilares tienen los objetos correctos!");
-            if(flag == true){
+
+            if (flag)
+            {
                 Instantiate(prefabToSpawn, new Vector3(-1, 7, 4), Quaternion.identity);
                 flag = false;
             }
-            // Puedes agregar aquí cualquier lógica adicional que desees cuando todos los pilares estén correctos.
         }
         else
         {
             Debug.Log("No todos los pilares tienen los objetos correctos.");
         }
+
+        // Restar cuando hay pilares incorrectos
+        int incorrectToSubtract = incorrectPillars > 0 ? 1 : 0;
+        correctPillars = Mathf.Max(0, correctPillars - incorrectToSubtract);
     }
 }
+
 
 
 

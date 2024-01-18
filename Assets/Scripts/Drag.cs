@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Drag : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     [HideInInspector]
     public Drop currentDropSlot;
     public void onDrop()
@@ -17,5 +19,9 @@ public class Drag : MonoBehaviour
             currentDropSlot.transform.rotation;
             currentDropSlot.gameObject.SetActive(false);
         }
+    }
+    public void playAudio(){
+        audioSource.clip = audioClip;
+        audioSource.PlayOneShot(audioClip);
     }
 }

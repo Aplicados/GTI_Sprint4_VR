@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Drop : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public Material highMat;
     private Material ownMat;
     public string expectedTag = "Cuadrado";
@@ -21,6 +23,7 @@ public class Drop : MonoBehaviour
         {
             this.GetComponent<Renderer>().material = highMat;
             currentDragObject = dragComponent; // Almacena la referencia al objeto Drag actual.
+            playAudio();
         }
     }
 
@@ -32,6 +35,10 @@ public class Drop : MonoBehaviour
             this.GetComponent<Renderer>().material = ownMat;
             currentDragObject = null; // Limpia la referencia cuando el objeto Drag sale.
         }
+    }
+    public void playAudio(){
+        audioSource.clip = audioClip;
+        audioSource.PlayOneShot(audioClip);
     }
 }
 

@@ -39,31 +39,36 @@ public class NavegadorTextos : MonoBehaviour
             currentIndex++;
             UpdateUI();
         }
-        //Si es el ultimo panel, desactiva todo el canvas
         else if (currentIndex == panelesTextos.Length - 1)
         {
-            canvasIntro.gameObject.SetActive(false);
+            nextButton.interactable = false;
             GameManager.tutorialDone = true;
-
         }
     }
 
     // Actualiza la interfaz de usuario.
-    void UpdateUI()
+    // Actualiza la interfaz de usuario.
+void UpdateUI()
+{
+    // Desactiva todos los paneles.
+    for (int i = 0; i < panelesTextos.Length; i++)
     {
-        // Desactiva todos los paneles.
-        for (int i = 0; i < panelesTextos.Length; i++)
-        {
-            panelesTextos[i].SetActive(false);
-        }
+        panelesTextos[i].SetActive(false);
+    }
 
-        // Activa solo el panel actual.
-        panelesTextos[currentIndex].SetActive(true);
+    // Activa solo el panel actual.
+    panelesTextos[currentIndex].SetActive(true);
 
-        // Actualiza el estado de los botones.
-        prevButton.interactable = (currentIndex > 0);
-        //nextButton.interactable = (currentIndex < panelesTextos.Length - 1);
+    // Actualiza el estado de los botones.
+    prevButton.interactable = (currentIndex > 0);
+    nextButton.interactable = (currentIndex < panelesTextos.Length - 1);
 
-
+    // Desactiva el botón nextButton si estás en el último panel.
+    if (currentIndex == panelesTextos.Length - 1)
+    {
+        nextButton.interactable = false;
     }
 }
+
+}
+

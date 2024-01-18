@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class JuegoGirar : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class JuegoGirar : MonoBehaviour
     public GameObject[] objetosDeLaSala; // Los objetos de la sala a los quecambiar el material
 
     public GameObject tapaBajada,tapaSubida;//la tapa de la caja
+    public TextMeshProUGUI texto;
 
     
    
@@ -33,6 +36,7 @@ public class JuegoGirar : MonoBehaviour
             foreach (GameObject objeto in objetosDeLaSala)
             {
                 CambiarMaterialDelObjeto(objeto);
+                texto.text = "¡Conseguido!";
             }
             
         }else{
@@ -40,6 +44,7 @@ public class JuegoGirar : MonoBehaviour
             foreach (GameObject objeto in objetosDeLaSala)
             {
                 CambiarApagado(objeto);
+                texto.text = "¡Gira!";
             }
         }
     }
