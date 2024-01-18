@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class JuegoGirar : MonoBehaviour
 {
+    
     public Material nuevoMaterial; // El nuevo material que esta encendido
     public Material materialApagado; // El matrial de apagado
     public GameObject[] objetosDeLaSala; // Los objetos de la sala a los quecambiar el material
 
     public GameObject tapaBajada,tapaSubida;//la tapa de la caja
     public TextMeshProUGUI texto;
+
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    public int num=0;
 
     
    
@@ -37,6 +42,12 @@ public class JuegoGirar : MonoBehaviour
             {
                 CambiarMaterialDelObjeto(objeto);
                 texto.text = "¡Conseguido!";
+                if (num==0){
+                    num=num+1;
+                    playAudio();
+                    
+                }
+                
             }
             
         }else{
@@ -88,5 +99,10 @@ public class JuegoGirar : MonoBehaviour
         {
             Debug.LogError("El objeto no tiene un componente Renderer.");
         }
+        num=0;
+    }
+    public void playAudio(){
+        audioSource.clip = audioClip;
+        audioSource.PlayOneShot(audioClip);
     }
 }
