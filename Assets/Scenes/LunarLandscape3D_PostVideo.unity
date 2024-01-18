@@ -11150,6 +11150,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 453483633}
     - target: {fileID: 8305753043541471609, guid: 06811cb5f4d30664a882eeeec099ca0e, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0225bd393e7a33d4c9458486b1f946c8, type: 3}
+    - target: {fileID: 8305753043541471609, guid: 06811cb5f4d30664a882eeeec099ca0e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 453483637}
+    - target: {fileID: 8305753043541471609, guid: 06811cb5f4d30664a882eeeec099ca0e, type: 3}
       propertyPath: OnPuzzleCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
       objectReference: {fileID: 0}
@@ -13735,18 +13743,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 453483637}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0225bd393e7a33d4c9458486b1f946c8, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

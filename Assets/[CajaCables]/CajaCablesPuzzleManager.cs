@@ -6,6 +6,10 @@ public class CajaCablesPuzzleManager : MonoBehaviour
     [SerializeField] GameObject caja;
 
     public UnityEvent OnPuzzleCompleted;
+    public AudioSource audioSource;
+    public AudioClip clip;
+    private bool auidoPlayed = false;
+
 
     int cables_count = 0;
 
@@ -29,6 +33,12 @@ public class CajaCablesPuzzleManager : MonoBehaviour
     public void AbrirCaja(bool abrir)
     {
         caja.GetComponent<Animator>().SetBool("opened", abrir);
+        if (auidoPlayed == false)
+        {
+            audioSource.clip = clip;
+            audioSource.PlayOneShot(clip);
+            auidoPlayed=true;
+        }
     }
 
 }
