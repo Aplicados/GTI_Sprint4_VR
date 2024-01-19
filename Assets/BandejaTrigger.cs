@@ -13,6 +13,7 @@ public class BandejaTrigger : MonoBehaviour
         Debug.Log("llave enter");
         if (other.gameObject.CompareTag("Llave")) {
             bandeja.llaves[numLlave] = true;
+            bandeja.contador++;
         }
     }
 
@@ -21,6 +22,7 @@ public class BandejaTrigger : MonoBehaviour
         Debug.Log("llave exit");
         if (other.gameObject.CompareTag("Llave")) {
             bandeja.llaves[numLlave] = false;
+            bandeja.contador--;
         }
     }
 }
