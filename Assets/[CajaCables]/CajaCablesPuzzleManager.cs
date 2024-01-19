@@ -8,6 +8,7 @@ public class CajaCablesPuzzleManager : MonoBehaviour
     public UnityEvent OnPuzzleCompleted;
     public AudioSource audioSource;
     public AudioClip clip;
+    public AudioClip clip2;
     private bool auidoPlayed = false;
 
 
@@ -27,6 +28,8 @@ public class CajaCablesPuzzleManager : MonoBehaviour
             //Puzzle completed
             Debug.Log("All cables connected!");
             OnPuzzleCompleted?.Invoke();
+            audioSource.clip = clip2;
+            audioSource.PlayOneShot(clip2);
             
         }
     }
